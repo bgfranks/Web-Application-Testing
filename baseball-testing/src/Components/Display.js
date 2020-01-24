@@ -8,12 +8,12 @@ const CountContainer = styled.div`
 `;
 
 const CountDisplay = styled.div`
-  border: 2px solid #000;
+  border: 2px solid #fff;
   border-radius: 10px;
   background: #000;
   color: #fff;
   width: 150px;
-  margin: 20px;
+  margin: 0 50px;
 
   h2 {
     padding: 0 5px;

@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import Display from "./Display";
 import styled from "styled-components";
+import "./hover.css";
 
 const DashboardContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  background: gray;
+  background: #001011bf;
   height: 400px;
   width: 800px;
   border-radius: 10px;
@@ -56,24 +57,27 @@ const Dashboard = () => {
       <Display strikeCount={strikeCount} ballCount={ballCount} />
       <ButtonContainer>
         <button
-          className="btn btn-strike"
+          className="btn btn-strike hvr-back-pulse hvr-pulse"
           onClick={() => setStrikeCount(addCount(strikeCount))}
         >
           Strike
         </button>
         <button
-          className="btn btn-ball"
+          className="btn btn-ball hvr-back-pulse hvr-pulse"
           onClick={() => setBallCount(addCount(ballCount))}
         >
           Ball
         </button>
         <button
-          className="btn btn-foul"
+          className="btn btn-foul hvr-back-pulse hvr-pulse"
           onClick={() => setStrikeCount(foulCount(strikeCount))}
         >
           Foul!
         </button>
-        <button className="btn btn-hit" onClick={() => clearCount()}>
+        <button
+          className="btn btn-hit hvr-back-pulse hvr-pulse"
+          onClick={() => clearCount()}
+        >
           Hit!
         </button>
       </ButtonContainer>

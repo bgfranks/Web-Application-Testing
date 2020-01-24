@@ -7,7 +7,8 @@ const AppContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 100px;
+  background: #6b0f1a;
+  height: 100vh;
 `;
 
 function App() {
