@@ -1,12 +1,20 @@
 import React from "react";
 import Dashboard from "./Components/Dashboard";
 import "./App.css";
+import styled from "styled-components";
+
+const AppContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+`;
 
 function App() {
   return (
-    <div className="App">
+    <AppContainer className="App">
       <Dashboard />
-    </div>
+    </AppContainer>
   );
 }
 

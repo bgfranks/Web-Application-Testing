@@ -1,6 +1,33 @@
 import React, { useState } from "react";
 import Display from "./Display";
+import styled from "styled-components";
 
+const DashboardContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background: gray;
+  height: 400px;
+  width: 800px;
+  border-radius: 10px;
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  width: inherit;
+
+  .btn {
+    height: 45px;
+    width: 85px;
+    margin: 0 30px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+  }
+`;
+
+// Updater functions
 export const addCount = currentCount => {
   return currentCount + 1;
 };
@@ -25,29 +52,32 @@ const Dashboard = () => {
   };
 
   return (
-    <div>
+    <DashboardContainer>
       <Display strikeCount={strikeCount} ballCount={ballCount} />
-      <div className="btn-container">
-        <div className="strike-btn">
-          <button onClick={() => setStrikeCount(addCount(strikeCount))}>
-            Strike
-          </button>
-        </div>
-        <div className="ball-btn">
-          <button onClick={() => setBallCount(addCount(ballCount))}>
-            Ball
-          </button>
-        </div>
-        <div className="foul-btn">
-          <button onClick={() => setStrikeCount(foulCount(strikeCount))}>
-            Foul Ball
-          </button>
-        </div>
-        <div className="hit-btn">
-          <button onClick={() => clearCount()}>Hit!</button>
-        </div>
-      </div>
-    </div>
+      <ButtonContainer>
+        <button
+          className="btn btn-strike"
+          onClick={() => setStrikeCount(addCount(strikeCount))}
+        >
+          Strike
+        </button>
+        <button
+          className="btn btn-ball"
+          onClick={() => setBallCount(addCount(ballCount))}
+        >
+          Ball
+        </button>
+        <button
+          className="btn btn-foul"
+          onClick={() => setStrikeCount(foulCount(strikeCount))}
+        >
+          Foul!
+        </button>
+        <button className="btn btn-hit" onClick={() => clearCount()}>
+          Hit!
+        </button>
+      </ButtonContainer>
+    </DashboardContainer>
   );
 };
 
